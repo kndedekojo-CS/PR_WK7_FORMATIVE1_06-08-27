@@ -18,7 +18,7 @@ class Assignment:
 
 class Homework(Assignment):
     def __init__(self, subject, title, score, max_score, due_date):
-        #This will use the Assignment ckass to store the 
+        #This will use the Assignment class to store the 
         super().__init__(subject, title, score, max_score, due_date, "Homework")
 
 class Exam(Assignment):
@@ -45,8 +45,24 @@ def add_homework(self):
     score = input("Enter the score received: ")
     max_score = input("Enter the maximum score of your work: ")
     due_date = input("Enter the due date (MM/DD/YYYY): ")
-    #This will create the Homework objectusing the information entered by the user.
+    #This will create the Homework object using the information entered by the user.
     homework = Homework(subject, title, score, max_score, due_date)
     #This will add the homework to the list of assignments in the GradeTracker class.
     self.add_assignment(homework)
-    
+
+def add_exam(self):
+    #This will ask the user for the information needed to create the exam object.
+    subject = input("Enter the subject: ")
+    title = input("Enter the title of the exam: ")
+    score = input("Enter the score received: ")
+    max_score = input("Enter the maximum score of your work: ")
+    due_date = input("Enter the due date (MM/DD/YYYY): ")
+    #This will create the Exam object using the information entered by the user.
+    exam = Exam(subject, title, score, max_score, due_date)
+    #This will add the exam to the list of assignments in the GradeTracker class.
+    self.add_assignment(exam)
+
+tracker = GradeTracker()
+tracker.add_homework()
+print("\nHomework added successfully!")
+print(len(tracker.assignments))
