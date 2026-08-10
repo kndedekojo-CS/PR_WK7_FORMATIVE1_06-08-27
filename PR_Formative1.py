@@ -37,3 +37,16 @@ class GradeTracker:
     def add_assignment(self, assignment):
         #This will add the homework or exam object to the the list.
         self.assignments.append(assignment)
+
+def add_homework(self):
+    #This will ask the user for the information  needed to create the homework object.
+    subject = input("Enter the subject: ")
+    title = input("Enter the title of the homework: ")
+    score = input("Enter the score received: ")
+    max_score = input("Enter the maximum score of your work: ")
+    due_date = input("Enter the due date (MM/DD/YYYY): ")
+    #This will create the Homework objectusing the information entered by the user.
+    homework = Homework(subject, title, score, max_score, due_date)
+    #This will add the homework to the list of assignments in the GradeTracker class.
+    self.add_assignment(homework)
+    
