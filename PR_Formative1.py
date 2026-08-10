@@ -66,3 +66,14 @@ tracker = GradeTracker()
 tracker.add_homework()
 print("\nHomework added successfully!")
 print(len(tracker.assignments))
+
+def list_assignments(self):
+    #This will go through each assigment in the list and display the the information stored in it.
+    for assignment in self.assignments:
+        print(f"Subject: {assignment.subject}")
+        print(f"Title: {assignment.title}")
+        print(f"Score: {assignment.score}/{assignment.max_score}")
+        print(f"Due Date: {assignment.due_date}")
+        print(f"Type: {assignment.assignment_type}")
+        print()
+        
