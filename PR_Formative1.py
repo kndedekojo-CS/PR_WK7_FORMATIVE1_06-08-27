@@ -12,3 +12,16 @@ class Assignment:
         self.max_score = float(max_score)
         self.due_date = due_date
         self.assignment_type = assignment_type
+
+#HOMEWORK CLASS
+#This will be a child class of  the Assignment. It will contain  information it inherits from Assignment, as well as information specific to homework assignments.
+
+class Homework(Assignment):
+    def __init__(self, subject, title, score, max_score, due_date):
+        #This will use the Assignment ckass to store the 
+        super().__init__(subject, title, score, max_score, due_date, "Homework")
+
+class Exam(Assignment):
+    def __init__(self, subject, title, score, max_score, due_date):
+        #This will use the Assignment class to store the information about the exam.
+        super().__init__(subject, title, score, max_score, due_date, "Exam")
