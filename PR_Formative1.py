@@ -25,3 +25,15 @@ class Exam(Assignment):
     def __init__(self, subject, title, score, max_score, due_date):
         #This will use the Assignment class to store the information about the exam.
         super().__init__(subject, title, score, max_score, due_date, "Exam")
+
+
+#Grade Tracker class
+#The grade tracker class will be used to store all of the assignments and later list,filter and calculate grade for each subject.
+
+class GradeTracker:
+    def __init__(self):
+        #This will start with an empty list of assignments, because none has been added yet.
+        self.assignments = []
+    def add_assignment(self, assignment):
+        #This will add the homework or exam object to the the list.
+        self.assignments.append(assignment)
