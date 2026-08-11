@@ -107,3 +107,20 @@ class GradeTracker:
         #This will add the exam to the list of assignments in the GradeTracker class.
         self.add_assignment(exam)
         print("Exam added successfully!")
+
+    def list_assignments(self):
+        #This will go through each assignment in the list and display the information stored in the assignment object.
+
+        print("\n~~~~~~~~~~~~LIST OF ALL ASSIGNMENTS~~~~~~~~~~~~")
+
+
+        if len(self.assignments) == 0:
+            print("No assignments have been added yet.")
+            return
+
+        for assignment in self.assignments:
+            print(f"\nSubject: {assignment.subject}")
+            print(f"Title: {assignment.title}")
+            print(f"Score: {assignment.score}/{assignment.max_score}")
+            print(f"Due Date: {assignment.due_date}")
+            print(f"Type: {assignment.assignment_type}")
