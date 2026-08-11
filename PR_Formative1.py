@@ -138,4 +138,62 @@ def show_summary(self):
         else:
             print("No assignments available.")
 
-                      
+def show_summary(self):
+
+        # Calculate the overall average of all assignments.
+        total = 0
+
+        for assignment in self.assignments:
+            percentage = (assignment.score / assignment.max_score) * 100
+            total = total + percentage
+
+        if len(self.assignments) > 0:
+            average = total / len(self.assignments)
+            print("Overall average:", average)
+
+        else:
+            print("No assignments available.")
+            return
+
+        # Calculate the average for each subject.
+        subjects = []
+
+        for assignment in self.assignments:
+            if assignment.subject not in subjects:
+                subjects.append(assignment.subject)
+
+        for subject in subjects:
+
+            subject_total = 0
+            subject_count = 0
+
+            for assignment in self.assignments:
+
+                if assignment.subject == subject:
+                    percentage = (assignment.score / assignment.max_score) * 100
+                    subject_total = subject_total + percentage
+                    subject_count = subject_count + 1
+
+            subject_average = subject_total / subject_count
+
+            print(subject, "average:", subject_average)
+
+        # Find the highest and lowest assignment.
+        highest = self.assignments[0]
+        lowest = self.assignments[0]
+
+        for assignment in self.assignments:
+
+            current_percentage = (assignment.score / assignment.max_score) * 100
+            highest_percentage = (highest.score / highest.max_score) * 100
+            lowest_percentage = (lowest.score / lowest.max_score) * 100
+
+            if current_percentage > highest_percentage:
+                highest = assignment
+
+            if current_percentage < lowest_percentage:
+                lowest = assignment
+
+        print("Highest assignment:", highest.title)
+        print("Lowest assignment:", lowest.title)
+        
