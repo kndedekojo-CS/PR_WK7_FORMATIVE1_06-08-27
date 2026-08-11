@@ -68,7 +68,7 @@ print("\nHomework added successfully!")
 print(len(tracker.assignments))
 
 def list_assignments(self):
-    #This will go through each assigment in the list and display the the information stored in it.
+    #This will go through each assignment in the list and display the information stored in it.
     for assignment in self.assignments:
         print(f"Subject: {assignment.subject}")
         print(f"Title: {assignment.title}")
@@ -76,4 +76,30 @@ def list_assignments(self):
         print(f"Due Date: {assignment.due_date}")
         print(f"Type: {assignment.assignment_type}")
         print()
-        
+def filter_assignments(self):
+    #This will ask the user how they want to filter the assignments.
+    print("How would you like to filter the assignments?")
+    print("1. By Subject")
+    print("2. By Type (Homework or Exam)")
+    print("3. By month")
+
+    choice = input("Choose an option (1-3): ")
+     #Filter assignment by subject.
+    if choice == "1":
+        subject = input("Enter the subject: ")
+        for assignment in self.assignments:
+            if assignment.subject.lower() == subject.lower():
+                print(assignment.title)
+
+    elif choice == "2":
+        assignment_type = input("Enter your assignmnet type(Homework/Exam):")
+        for assignment in self.assignments:
+            if assignment.type.lower() == assignment_type.lower():
+                print(assignment.title)
+
+    elif choice == "3":
+        month = input("Enter the month (MM): ")
+        for assignment in self.assignments:
+            assignment_month = assignment.due_date.split("/")[0]
+            if assignment_month == month:
+                print(assignment.title)
