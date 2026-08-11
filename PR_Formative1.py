@@ -103,3 +103,39 @@ def filter_assignments(self):
             assignment_month = assignment.due_date.split("/")[0]
             if assignment_month == month:
                 print(assignment.title)
+
+
+def show_summary(self):
+
+        # Calculate the overall average of all assignments.
+        total = 0
+
+        for assignment in self.assignments:
+
+            percentage = (assignment.score / assignment.max_score) * 100
+            total = total + percentage
+
+        if len(self.assignments) > 0:
+            average = total / len(self.assignments)
+            print("Overall average:", average)
+        else:
+            print("No assignments available.")
+
+
+def show_summary(self):
+
+        # Calculate the overall average of all assignments.
+        total = 0
+
+        for assignment in self.assignments:
+
+            percentage = (assignment.score / assignment.max_score) * 100
+            total = total + percentage
+
+        if len(self.assignments) > 0:
+            average = total / len(self.assignments)
+            print("Overall average:", average)
+        else:
+            print("No assignments available.")
+
+                      
