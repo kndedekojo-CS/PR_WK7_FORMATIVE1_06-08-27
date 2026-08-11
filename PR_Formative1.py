@@ -196,4 +196,42 @@ def show_summary(self):
 
         print("Highest assignment:", highest.title)
         print("Lowest assignment:", lowest.title)
-        
+
+# Creating  the tracker and giving the user a menu to choose what they want the program to do.
+
+tracker = GradeTracker()
+
+while True:
+
+    print("\nStudent Grade Tracker")
+    print("1. Add homework")
+    print("2. Add exam")
+    print("3. List assignments")
+    print("4. Filter assignments")
+    print("5. Show summary")
+    print("0. Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        tracker.add_homework()
+
+    elif choice == "2":
+        tracker.add_exam()
+
+    elif choice == "3":
+        tracker.list_assignments()
+
+    elif choice == "4":
+        tracker.filter_assignments()
+
+    elif choice == "5":
+        tracker.show_summary()
+
+    elif choice == "0":
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")        
+
