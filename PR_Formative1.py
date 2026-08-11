@@ -84,3 +84,26 @@ class GradeTracker:
         #This will add the homework to the list of assignments in the GradeTracker class.
         self.add_assignment(homework)
         print("Homework added successfully!")
+
+    def add_exam(self):
+        #This will ask the user for the information needed to create the exam object.
+        subject = input("Enter the subject: ")
+        title = input("Enter the title of the exam: ")
+
+        #Using get_score so the program can validate the score.
+        score =  get_score("Enter the score received: ")
+        max_score = get_score("Enter the maximum score of your work: ")
+
+        #Check that the score is not bigger than the max score.
+        if score > max_score:
+            print("Score cannot be greater than max score. Exam not added.")
+            return
+
+        due_date = input("Enter the due date (dd/mm/yyyy): ")
+
+        #This will create the Exam object using the information entered by the user.
+        exam = Exam(subject, title, score, max_score, due_date)
+
+        #This will add the exam to the list of assignments in the GradeTracker class.
+        self.add_assignment(exam)
+        print("Exam added successfully!")
