@@ -108,7 +108,7 @@ class GradeTracker:
             print(f"Due Date: {assignment.due_date}")
             print(f"Type: {assignment.assignment_type}")
 
-    def filter_assignments_by_subject(self, subject):
+    def filter_assignments(self):
         #This will ask the user how they want to filter the assignments.
 
         print(f"\n~~~~~~~~~~~~FILTER ASSIGNMENTS~~~~~~~~~~~~")
@@ -207,8 +207,8 @@ class GradeTracker:
             if current_percentage < lowest_percentage:
                 lowest = assignment
 
-            print("\nHighest scoring assignment:", highest.title)
-            print("Lowest scoring assignment:", lowest.title)
+        print("\nHighest scoring assignment:", highest.title)
+        print("Lowest scoring assignment:", lowest.title)
 
 
 #FUNCTION TO GET A VALID SCORE
@@ -276,7 +276,7 @@ while True:
     elif choice == "3":
         tracker.list_assignments()
     elif choice == "4":
-        tracker.filter_assignments_by_subject(input("Enter the subject to filter by: "))
+        tracker.filter_assignments()
     elif choice == "5":
         tracker.show_summary()
     elif choice == "6":
