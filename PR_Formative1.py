@@ -3,8 +3,6 @@
 #ASSIGNMENT CLASS
 #This will be the parent class for all assignments. It will contain information that both homework and exams will have.
 
-from calendar import month
-
 
 class Assignment:
     def __init__(self, subject, title, score, max_score, due_date, assignment_type):
@@ -46,22 +44,22 @@ class GradeTracker:
         self.assignments.append(assignment)
 
     def add_homework(self):
-        #This will ask the user for the information needed to create the homework object.
-        subject = input("Enter the subject: ")
-        title = input("Enter the title of the homework: ")
+        #This will ask the user for the information needed to create the homework object and the use of get_text so the program does not accept blank answers.
+        subject = get_text("Enter the subject: ")
+        title = get_text("Enter the title of the homework: ")
 
 
 
         #Using get_score so the program can validate the score.
         score =  get_score("Enter the score received: ")
-        max_score = get_score("Enter the maximum score of your work: ")
+        max_score = get_score("Enter the maximum score : ")
 
         #Check that the score is not bigger than the max score.
         if score > max_score:
             print("Score cannot be greater than max score. Homework not added.")
             return
 
-        due_date = input("Enter the due date (dd/mm/yyyy): ")
+        due_date = get_text("Enter the due date (dd/mm/yyyy): ")
  
         #This will create the Homework object using the information entered by the user.
         homework = Homework(subject, title, score, max_score, due_date)
@@ -72,19 +70,19 @@ class GradeTracker:
 
     def add_exam(self):
         #This will ask the user for the information needed to create the exam object.
-        subject = input("Enter the subject: ")
-        title = input("Enter the title of the exam: ")
+        subject = get_text("Enter the subject: ")
+        title = get_text("Enter the title of the exam: ")
 
         #Using get_score so the program can validate the score.
         score =  get_score("Enter the score received: ")
-        max_score = get_score("Enter the maximum score of your work: ")
+        max_score = get_score("Enter the maximum score: ")
 
         #Check that the score is not bigger than the max score.
         if score > max_score:
             print("Score cannot be greater than max score. Exam not added.")
             return
 
-        due_date = input("Enter the due date (dd/mm/yyyy): ")
+        due_date = get_text("Enter the due date (dd/mm/yyyy): ")
 
         #This will create the Exam object using the information entered by the user.
         exam = Exam(subject, title, score, max_score, due_date)
@@ -140,7 +138,7 @@ class GradeTracker:
 
         #Filter assignment by month
         elif choice == "3":
-            month_year = input("Enter the month and year to filter by (MM/YYYY): ")
+            month = input("Enter the month and year to filter by (MM/YYYY): ")
             for assignment in self.assignments:
                  #due_date looks like 15/08/2026, so characters 3 to 10 are 08/2026
                 if assignment.due_date[3:10] == month:
@@ -231,6 +229,19 @@ def get_score(message):
         except:
             print("Please enter a number.")
 
+#FUNCTION TO GET NON-EMPTY TEXT
+#This function keeps asking the user until they actually type something.It stops the program from storing blank subjects, titles, or dates.
+ 
+def get_text(message):
+    while True:
+        text = input(message)
+        text = text.strip()
+ 
+        if text == "":
+            print("This cannot be left empty. Please try again.")
+        else:
+            return text
+
 
 # TO SHOW FILTER RESULTS
 #This function takes a list of assignments and prints their titles.If the list is empty, it tells the user nothing was found.We also use this so we don't have to repeat the same print logic for subject, type, and month filters.
@@ -242,4 +253,34 @@ def show_matches(matches):
         for assignment in matches:
             print(assignment.title)
 
-    
+
+# Creating the tracker and giving the user a menu to choose what they want the program to do.
+
+tracker = GradeTracker()
+
+while True:
+    print("\n~~~~~~~~~~~~GRADE TRACKER MENU~~~~~~~~~~~~")
+    print("1. Add Homework")
+    print("2. Add Exam")
+    print("3. List All Assignments")
+    print("4. Filter Assignments")
+    print("5. Show Grade Summary")
+    print("6. Exit")
+
+    choice = input("Enter your choice (1-6): ")
+
+    if choice == "1":
+        tracker.add_homework()
+    elif choice == "2":
+        tracker.add_exam()
+    elif choice == "3":
+        tracker.list_assignments()
+    elif choice == "4":
+        tracker.filter_assignments_by_subject(input("Enter the subject to filter by: "))
+    elif choice == "5":
+        tracker.show_summary()
+    elif choice == "6":
+        print("Exiting the program.\nGoodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
