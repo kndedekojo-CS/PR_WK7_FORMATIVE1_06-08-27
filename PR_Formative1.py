@@ -177,4 +177,44 @@ class GradeTracker:
         #This will display the matches found based on the filter criteria.
         show_matches(matches)
 
+    def show_summary(self):
+        #This will calculate the total score and max score for each subject and display the grade percentage.
+
+        print("\n~~~~~~~~~~~~GRADE SUMMARY~~~~~~~~~~~~")
+
+        if len(self.assignments) == 0:
+            print("No assignments have been added yet.")
+            return
+
+        #This calculates the overall average for all assignments.
+        total_score = 0
+        total_max_score = 0
+
+        for assignment in self.assignments:
+            total_score += assignment.score
+            total_max_score += assignment.max_score
+
+        overall_average = (total_score / total_max_score) * 100
+        print("Overall average:", round(overall_average, 2), "%")
+
+        #This calculates the average for each subject.
+        print("\nSubject Averages:")
+        subjects = []
+
+        for assignment in self.assignments:
+            if assignment.subject not in subjects:
+                subjects.append(assignment.subject)
+
+        for subject in subjects:
+            subject_score = 0
+            subject_max_score = 0
+
+            for assignment in self.assignments:
+                if assignment.subject == subject:
+                    subject_score += assignment.score
+                    subject_max_score += assignment.max_score
+
+            subject_average = (subject_score / subject_max_score) * 100
+            print(subject, "average:", round(subject_average, 2), "%")
+
     
