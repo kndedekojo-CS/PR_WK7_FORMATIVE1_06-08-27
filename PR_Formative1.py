@@ -32,30 +32,6 @@ class Exam(Assignment):
         #This will use the Assignment class to store the information about the exam.
         super().__init__(subject, title, score, max_score, due_date, "Exam")
 
-#FUNCTION TO GET A VALID SCORE
-#This function keeps asking the user until they type in a real number.This stops the program from crashing if the user types letters by mistake.
-
-def get_score(message):
-    while True:
-        score = input(message)
-
-        try:
-            score = float(score)
-
-            if score < 0:
-                print("Score cannot be negative. Try again.")
-            else:
-                return score
-
-        except:
-            print("Please enter a number.")
-
-def show_matches(matches):
-    if len(matches) == 0:
-        print("No assignments found.")
-    else:
-        for assignment in matches:
-            print(assignment.title)
 
 #GRADE TRACKER CLASS
 #The grade tracker class will be used to store all of the assignments and later list,filter and calculate grade for each subject.
@@ -216,5 +192,54 @@ class GradeTracker:
 
             subject_average = (subject_score / subject_max_score) * 100
             print(subject, "average:", round(subject_average, 2), "%")
+
+
+        #To find the highest and lowest scoring assignments, we will sort the assignments by score.
+        highest = self.assignments[0]
+        lowest = self.assignments[0]
+
+        for assignment in self.assignments:
+            current_percentage = (assignment.score / assignment.max_score) * 100
+            highest_percentage = (highest.score / highest.max_score) * 100
+            lowest_percentage = (lowest.score / lowest.max_score) * 100
+
+            if current_percentage > highest_percentage:
+                highest = assignment
+
+            if current_percentage < lowest_percentage:
+                lowest = assignment
+
+            print("\nHighest scoring assignment:", highest.title)
+            print("Lowest scoring assignment:", lowest.title)
+
+
+#FUNCTION TO GET A VALID SCORE
+#This function keeps asking the user until they type in a real number.This stops the program from crashing if the user types letters by mistake.
+
+def get_score(message):
+    while True:
+        score = input(message)
+
+        try:
+            score = float(score)
+
+            if score < 0:
+                print("Score cannot be negative. Try again.")
+            else:
+                return score
+
+        except:
+            print("Please enter a number.")
+
+
+# TO SHOW FILTER RESULTS
+#This function takes a list of assignments and prints their titles.If the list is empty, it tells the user nothing was found.We also use this so we don't have to repeat the same print logic for subject, type, and month filters.
+ 
+def show_matches(matches):
+    if len(matches) == 0:
+        print("No assignments found.")
+    else:
+        for assignment in matches:
+            print(assignment.title)
 
     
