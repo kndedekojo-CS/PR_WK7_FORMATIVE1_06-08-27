@@ -54,12 +54,17 @@ class GradeTracker:
         score =  get_score("Enter the score received: ")
         max_score = get_score("Enter the maximum score : ")
 
+        #Check that the max_score is not zero to avoid division by zero errors.
+        if max_score == 0:
+            print("Maximum score must be greater than 0. Homework not added.")
+            return
+    
         #Check that the score is not bigger than the max score.
         if score > max_score:
             print("Score cannot be greater than max score. Homework not added.")
             return
 
-        due_date = get_text("Enter the due date (dd/mm/yyyy): ")
+        due_date = get_date("Enter the due date (dd/mm/yyyy): ")
  
         #This will create the Homework object using the information entered by the user.
         homework = Homework(subject, title, score, max_score, due_date)
@@ -77,12 +82,17 @@ class GradeTracker:
         score =  get_score("Enter the score received: ")
         max_score = get_score("Enter the maximum score: ")
 
+        #Check that the max_score is not zero to avoid division by zero errors.
+        if max_score == 0:
+            print("Maximum score must be greater than 0. Exam not added.")
+            return
+
         #Check that the score is not bigger than the max score.
         if score > max_score:
             print("Score cannot be greater than max score. Exam not added.")
             return
 
-        due_date = get_text("Enter the due date (dd/mm/yyyy): ")
+        due_date = get_date("Enter the due date (dd/mm/yyyy): ")
 
         #This will create the Exam object using the information entered by the user.
         exam = Exam(subject, title, score, max_score, due_date)
@@ -241,6 +251,21 @@ def get_text(message):
             print("This cannot be left empty. Please try again.")
         else:
             return text
+
+
+#FUNCTION TO GET A VALID DATE
+# This function keeps asking the user until they enter a date with three number parts separated by /.
+
+def get_date(message):
+    while True:
+        date = input(message)
+        parts = date.split("/")
+
+        if len(parts) == 3:
+            if parts[0].isdigit() and parts[1].isdigit() and parts[2].isdigit():
+                return date
+
+        print("Please enter the date in the format dd/mm/yyyy.")
 
 
 # TO SHOW FILTER RESULTS
