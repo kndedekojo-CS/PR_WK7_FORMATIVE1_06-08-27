@@ -1,81 +1,3 @@
-# ***Student Grade / Assignment Tracker**
-
-## **Project Overview**
-This Student Grade / Assignment Tracker was developed as part of the ** Week 7 Formative Assessment for Programming 1.**
-
-The task involved building a menu-driven Python program that allows students to:
-
-# *Record homework and exam assignments
- *View all recorded assignments
- _
- *Filter assignments based on different criteria
- *Generate a grade summary
-
-The project demonstrates key programming concepts taught in class, including:
-
- *Functions
- *Loops and conditionals
- *Input validation
- *Collections
- *Object-Oriented Programming (OOP)
- *Inheritance
-
-The program runs entirely in the terminal and stores assignment information in memory while the program is running. The menu-driven structure allows users to manage and review their assignments within a single session.
-
-## **Key Features**
-- **Add Assignments**
-   -Add Homework
-   -Add Exam
-- **Store Assignment Information**
-   -Subject
-   -Assignment title
-   -Score received
-   -Maximum score
-   -Due date
-   -Assignment type
-- **List All Assignments** in a clear and formatted view
-   -Filter Assignments by:
-   -Subject
-   -Assignment type
-   -Month and year
-- **View Grade Summary** including:
-   -Overall average
-   -Average for each subject
-   -Highest-scoring assignment
-   -Lowest-scoring assignment
-- **Input Validation** for:
-   -Negative scores
-   -Non-numeric scores
-   -Empty text inputs
-   -Scores greater than the maximum score
-- **OOP Design** using:
-   -'Assignment'
-   -'Homework'
-   -'Exam'
-   -GradeTracker
-- **Inheritance** is used so that Homework and Exam inherit common information from the Assignment parent class.
-
-## **How to Run the Program**
-
-###  *1. Ensure Python 3 is installed*
-   Check that Python is installed by running:
-    python --version
-
-###  *2. Clone the project repository*
-   Clone the project from GitHub:
-    git clone (https://github.com/kndedekojo-CS/PR_WK7_FORMATIVE1_06-08-27)
-
-###  *3. Navigate into the project directory*
-    cd PR_WK7_FORMATIVE1_06-08-27
-
-###  *4. Run the program*
-    Run the Python file:
-      python main.py
-
-5. Follow the on-screen menu instructions
-
-
-
 # **Student Grade / Assignment Tracker**
 
 ## **Project Overview**
@@ -138,15 +60,15 @@ Check using:
 
 ### **2. Clone the project repository**
 
-    git clone YOUR_GITHUB_REPOSITORY_URL
+    git clone https://github.com/kndedekojo-CS/PR_WK7_FORMATIVE1_06-08-27
 
 ### **3. Navigate into the project directory**
 
-    cd YOUR_PROJECT_FOLDER
+    cd PR_WK7_FORMATIVE1_06-08-27
 
 ### **4. Run the program**
 
-    python YOUR_PYTHON_FILE.py
+    python PR_Formative1.py
 
 ### **5. Follow the on-screen menu instructions**
 
@@ -181,13 +103,25 @@ When **Filter Assignments** is selected, the user can choose:
 
     Enter your choice (1-6): 1
 
-    Enter the subject: Programming
-    Enter the title of the homework: Python Classes
+    Enter the subject: English
+    Enter the title of the homework: Subject-Verb
     Enter the score received: 18
     Enter the maximum score: 20
     Enter the due date (dd/mm/yyyy): 15/08/2026
 
-    Homework added successfully!
+##     Homework added successfully!
+
+### **Adding an Exam**
+
+    Enter your choice (1-6): 2
+
+    Enter the subject: Mathematics
+    Enter the title of the exam: Midterm Exam
+    Enter the score received: 42
+    Enter the maximum score: 50
+    Enter the due date (dd/mm/yyyy): 20/08/2026
+
+##     Exam added successfully!
 
 ### **Viewing All Assignments**
 
@@ -195,11 +129,34 @@ When **Filter Assignments** is selected, the user can choose:
 
     ~~~~~~~~~~~~LIST OF ALL ASSIGNMENTS~~~~~~~~~~~~
 
-    Subject: Programming
-    Title: Python Classes
+    Subject: English
+    Title: Subject-Verb
     Score: 18.0/20.0
     Due Date: 15/08/2026
-    Type: Homework
+    Type: Homework 
+
+    Subject: Mathematics
+    Title: Midterm Exam
+    Score: 42.0/50.0
+    Due Date: 20/08/2026
+    Type: Exam
+
+### **Filtering Assignments**
+
+    Enter your choice (1-6): 4
+
+    ~~~~~~~~~~~~FILTER ASSIGNMENTS~~~~~~~~~~~~
+
+    How would you like to filter the assignments?
+    1. Filter by subject
+    2. Filter by assignment type(Homework or Exam)
+    3. Filter by Month(MM/YYYY)
+
+    Enter your choice (1-3): 2
+    Enter the assignment type to filter by (Homework or Exam): Exam
+
+    Midterm Exam
+
 
 ### **Viewing the Grade Summary**
 
@@ -210,10 +167,11 @@ When **Filter Assignments** is selected, the user can choose:
     Overall average: 90.0 %
 
     Subject Averages:
-    Programming average: 90.0 %
+    English average: 90.0 %
+    Mathematics average: 84.0 %
 
-    Highest scoring assignment: Python Classes
-    Lowest scoring assignment: Python Classes
+    Highest scoring assignment: Subject-Verb
+    Lowest scoring assignment: Midterm Exam
 
 ---
 
@@ -223,8 +181,8 @@ When **Filter Assignments** is selected, the user can choose:
 
 - Applying OOP principles in Python
 - Creating parent and child classes using inheritance
-- Using `super()` to initialise inherited attributes
-- Designing a user-friendly CLI interface
+- Using `super()` to initialize inherited attributes
+- Designing a user-friendly Command-Line Interface(CLI)
 - Implementing input validation
 - Managing data using custom classes and lists
 - Using loops and conditionals to process assignment data
@@ -232,13 +190,13 @@ When **Filter Assignments** is selected, the user can choose:
 
 ### **Challenges Encountered**
 
-- Ensuring scores are entered correctly
+- Ensuring  that the dates are entered correctly
 - Preventing scores from being greater than the maximum score
-- Handling invalid menu selections
+- The use of the get fuctions in the program
 - Filtering assignments correctly
 - Calculating overall and subject averages
 - Finding the highest and lowest scoring assignments
-- Organising the program using classes and inheritance
+- Organizing the program using classes and inheritance
 
 ### **Future Enhancements**
 
