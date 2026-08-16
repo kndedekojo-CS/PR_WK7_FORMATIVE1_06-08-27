@@ -68,8 +68,8 @@ Check using:
 
 ### **4. Run the program**
 
-    python PR_Formative1.py
-
+    Student_Grade-Assignment_Tracker.py
+    
 ### **5. Follow the on-screen menu instructions**
 
 The program will display the Grade Tracker menu. Enter the number of the option you want to use and follow the prompts.
