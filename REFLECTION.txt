@@ -1,0 +1,25 @@
+Reflection
+
+What I Learned
+----------------
+Working on this Student Grade / Assignment Tracker helped me understand how different topics we learned in class can be used together to build a complete program. Before this project, I understood classes, functions, loops, and inheritance separately, but this project helped me see how they work together.
+
+I learned how to create a parent class and child classes using inheritance. The Assignment class stores the common information, while the Homework and Exam classes inherit from it. This helped me understand inheritance better because I was using it in a real project instead of just learning the theory.
+
+I also learned how to use functions to make my code more organized. Instead of putting everything in one place, I separated different tasks into functions and methods. I also improved my understanding of lists, loops, and input validation because they were used in many parts of the program.
+
+Challenges I Faced
+-------------------
+One challenge I faced was making sure the program accepted only valid input from the user. For example, I had to stop users from entering letters instead of numbers, negative scores, or scores that were higher than the maximum score. It took some testing to make sure these checks worked properly.
+
+Another challenge was working with the filtering and summary features. I had to think carefully about how to go through the list of assignments and find the correct information. Sometimes I made mistakes in the logic and had to test the program several times before getting the correct results.
+
+I also had some difficulties understanding how the different classes and methods connected with each other. As I continued working on the project and fixing bugs, I became more comfortable with how everything worked together.
+
+How I Intend to Improve It
+---------------------------
+If I had more time, I would improve the program by adding proper date validation so users can only enter valid dates. I would also add options to edit and delete assignments because at the moment assignments can only be added and viewed.
+
+Another improvement would be saving the assignment data to a file so that the information is not lost when the program closes. I would also improve the way information is displayed to make the output easier to read.
+
+Finally, I would spend more time testing the program with different inputs to find any remaining issues and make the program more reliable.
