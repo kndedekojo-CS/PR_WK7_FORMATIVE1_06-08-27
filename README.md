@@ -164,7 +164,7 @@ When **Filter Assignments** is selected, the user can choose:
 
     ~~~~~~~~~~~~GRADE SUMMARY~~~~~~~~~~~~
 
-    Overall average: 90.0 %
+    Overall average: 85.71 %
 
     Subject Averages:
     English average: 90.0 %
@@ -192,7 +192,7 @@ When **Filter Assignments** is selected, the user can choose:
 
 - Ensuring  that the dates are entered correctly
 - Preventing scores from being greater than the maximum score
-- The use of the get fuctions in the program
+- The use of the get functions in the program
 - Filtering assignments correctly
 - Calculating overall and subject averages
 - Finding the highest and lowest scoring assignments
